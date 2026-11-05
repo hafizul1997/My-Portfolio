@@ -7,9 +7,22 @@
   --background: #080d18;
   --foreground: #f1f5f9;
   --surface: #151e2e;
+  --surface-secondary: #111827;
   --accent: #60a5fa;
   --muted: #a1afc2;
   --border: rgba(148, 163, 184, 0.15);
+}
+
+.light {
+  color-scheme: light;
+
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --surface: #ffffff;
+  --surface-secondary: #f1f5f9;
+  --accent: #2563eb;
+  --muted: #64748b;
+  --border: rgba(15, 23, 42, 0.12);
 }
 
 * {
@@ -26,6 +39,9 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), sans-serif;
+  transition:
+    background-color 250ms ease,
+    color 250ms ease;
 }
 
 h1,
@@ -37,7 +53,7 @@ h4 {
 
 ::selection {
   background: var(--accent);
-  color: #080d18;
+  color: #ffffff;
 }
 
 a {
@@ -63,4 +79,16 @@ button {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+/* Theme Toggle Icons */
+.theme-light-icon {
+  display: none;
+}
+
+.light .theme-dark-icon {
+  display: none;
+}
+
+.light .theme-light-icon {
+  display: block;
 }

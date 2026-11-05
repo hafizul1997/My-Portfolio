@@ -1,6 +1,7 @@
 
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
+import ThemeProvider from "@/components/providers/ThemeProvider";
 import "./globals.css";
 
 const inter = Inter({
@@ -22,12 +23,10 @@ export const metadata: Metadata = {
     template: "%s | Hafizul Islam",
   },
   verification: {
-  google: "5x4UxTfjIy4OB5vHKQb33XVbz7bE1mSim6OCLHb34g4",
-},
-
+    google: "5x4UxTfjIy4OB5vHKQb33XVbz7bE1mSim6OCLHb34g4",
+  },
   description:
     "Explore the portfolio of Hafizul Islam, a project-focused Full-Stack Web Developer based in Dubai, UAE. Discover projects built with Next.js, React, TypeScript, Node.js, Express.js and MongoDB.",
-
   keywords: [
     "Hafizul Islam",
     "Hafizul Islam Developer",
@@ -41,19 +40,10 @@ export const metadata: Metadata = {
     "Web Developer Dubai",
     "Portfolio",
   ],
-
-  authors: [
-    {
-      name: "Hafizul Islam",
-    },
-  ],
-
+  authors: [{ name: "Hafizul Islam" }],
   creator: "Hafizul Islam",
-
   applicationName: "Hafizul Islam Portfolio",
-
   category: "technology",
-
   openGraph: {
     title: "Hafizul Islam | Full-Stack Web Developer",
     description:
@@ -62,14 +52,12 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
-
   twitter: {
     card: "summary_large_image",
     title: "Hafizul Islam | Full-Stack Web Developer",
     description:
       "Explore my projects, technical skills and web development journey.",
   },
-
   robots: {
     index: true,
     follow: true,
@@ -89,12 +77,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body
-        className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+    <html lang="en">
+  <body
+    className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}
+  >
+    <ThemeProvider>
+      {children}
+    </ThemeProvider>
+  </body>
+</html>
   );
 }
