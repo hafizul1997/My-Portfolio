@@ -16,10 +16,14 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://hafizul-portfolio.vercel.app"),
   title: {
     default: "Hafizul Islam | Full-Stack Web Developer",
     template: "%s | Hafizul Islam",
   },
+  verification: {
+  google: "5x4UxTfjIy4OB5vHKQb33XVbz7bE1mSim6OCLHb34g4",
+},
 
   description:
     "Explore the portfolio of Hafizul Islam, a project-focused Full-Stack Web Developer based in Dubai, UAE. Discover projects built with Next.js, React, TypeScript, Node.js, Express.js and MongoDB.",
