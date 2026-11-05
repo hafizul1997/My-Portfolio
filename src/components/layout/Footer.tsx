@@ -13,16 +13,16 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#080D18] px-4 sm:px-6">
+    <footer className="border-t border-(--border) bg-(--background) px-4 text-(--foreground) sm:px-6">
       <div className="mx-auto max-w-7xl py-10">
         <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
           {/* Brand */}
           <Link
             href="#home"
             aria-label="Hafizul Islam home"
-            className="font-heading text-xl font-bold tracking-tight text-[#F1F5F9]"
+            className="font-heading text-xl font-bold tracking-tight text-(--foreground)"
           >
-            HAFIZUL<span className="text-blue-400">.DEV</span>
+            HAFIZUL<span className="text-(--accent)">.DEV</span>
           </Link>
 
           {/* Navigation */}
@@ -34,7 +34,7 @@ export default function Footer() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-sm text-[#A1AFC2] transition hover:text-blue-400"
+                className="text-sm text-(--muted) transition hover:text-(--accent)"
               >
                 {link.label}
               </Link>
@@ -47,7 +47,7 @@ export default function Footer() {
               href="https://github.com/hafizul1997"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-sm text-[#A1AFC2] transition hover:text-blue-400"
+              className="inline-flex items-center gap-1 text-sm text-(--muted) transition hover:text-(--accent)"
             >
               GitHub <ArrowUpRight size={14} />
             </Link>
@@ -56,7 +56,7 @@ export default function Footer() {
               href="https://www.linkedin.com/in/hafizul-islam-9a86b8360/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-sm text-[#A1AFC2] transition hover:text-blue-400"
+              className="inline-flex items-center gap-1 text-sm text-(--muted) transition hover:text-(--accent)"
             >
               LinkedIn <ArrowUpRight size={14} />
             </Link>
@@ -64,12 +64,12 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-8 border-t border-white/10 pt-6 text-center">
-          <p className="text-xs leading-6 text-[#64748B]">
+        <div className="mt-8 border-t border-(--border) pt-6 text-center">
+          <p className="text-xs leading-6 text-(--muted)">
             © {new Date().getFullYear()} Hafizul Islam. All rights reserved.
           </p>
 
-          <p className="mt-1 text-xs text-[#475569]">
+          <p className="mt-1 text-xs text-(--muted)/70">
             Designed and built with Next.js, TypeScript & Tailwind CSS.
           </p>
         </div>
