@@ -27,7 +27,7 @@ const contactMethods = [
     title: "LinkedIn",
     description: "Connect with me professionally.",
     label: "Connect on LinkedIn",
-    href: "https://www.linkedin.com/in/hafizul-islam-9a86b8361/",
+    href: "https://www.linkedin.com/in/hafizul-islam-9a86b8360/",
   },
 ];
 
@@ -124,17 +124,6 @@ export default function Contact() {
               })}
             </div>
           </div>
-        </div>
-
-        {/* Bottom note */}
-        <div className="mt-12 text-center">
-          <p className="text-sm text-[#64748B]">
-            Thanks for visiting my portfolio.
-          </p>
-
-          <p className="mt-2 text-xs text-[#475569]">
-            © {new Date().getFullYear()} Hafizul Islam. All rights reserved.
-          </p>
         </div>
       </div>
     </section>

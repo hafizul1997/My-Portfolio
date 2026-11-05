@@ -102,7 +102,7 @@ export default function Hero() {
   </Link>
 
   <Link
-    href="https://www.linkedin.com/in/hafizul-islam-9a86b8361/"
+    href="https://www.linkedin.com/in/hafizul-islam-9a86b8360/"
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Visit my LinkedIn profile"
