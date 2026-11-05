@@ -80,22 +80,21 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative overflow-hidden bg-[#080D18] px-4 py-24 sm:px-6 lg:py-32"
+      className="relative overflow-hidden bg-(--background) px-4 py-24 text-(--foreground) sm:px-6 lg:py-32"
     >
       <div className="mx-auto max-w-7xl">
-
         {/* Section Heading */}
         <div className="mb-14 max-w-2xl">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-blue-400">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-(--accent)">
             My Recent Work
           </p>
 
-          <h2 className="font-heading text-3xl font-bold tracking-tight text-[#F1F5F9] sm:text-4xl lg:text-5xl">
+          <h2 className="font-heading text-3xl font-bold tracking-tight text-(--foreground) sm:text-4xl lg:text-5xl">
             Featured{" "}
-            <span className="text-blue-400">Projects.</span>
+            <span className="text-(--accent)">Projects.</span>
           </h2>
 
-          <p className="mt-5 text-base leading-8 text-[#A1AFC2]">
+          <p className="mt-5 text-base leading-8 text-(--muted)">
             A selection of projects where I apply my technical
             knowledge to build practical web applications.
           </p>
@@ -109,12 +108,10 @@ export default function Projects() {
             return (
               <article
                 key={project.number}
-                className="group overflow-hidden rounded-3xl border border-white/10 bg-[#111827] transition duration-300 hover:-translate-y-1 hover:border-blue-400/30"
+                className="group overflow-hidden rounded-3xl border border-(--border) bg-(--surface) transition duration-300 hover:-translate-y-1 hover:border-(--accent)/40"
               >
-
                 {/* Project Screenshot */}
-                <div className="relative aspect-video overflow-hidden border-b border-white/10 bg-[#17243A]">
-
+                <div className="relative aspect-video overflow-hidden border-b border-(--border) bg-(--surface-secondary)">
                   <Image
                     src={project.image}
                     alt={`${project.title} website screenshot`}
@@ -123,48 +120,47 @@ export default function Projects() {
                     className="object-cover transition duration-500 group-hover:scale-105"
                   />
 
-                  <div className="absolute inset-0 bg-linear-to-t from-[#080D18]/60 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent" />
 
-                  <span className="absolute right-6 top-6 rounded-full border border-white/10 bg-[#080D18]/70 px-3 py-1.5 text-sm font-semibold tracking-widest text-white backdrop-blur-md">
+                  <span className="absolute right-6 top-6 rounded-full border border-white/10 bg-black/70 px-3 py-1.5 text-sm font-semibold tracking-widest text-white backdrop-blur-md">
                     {project.number}
                   </span>
                 </div>
 
                 {/* Project Information */}
                 <div className="p-6 sm:p-8">
-
                   <div className="mb-4 flex items-center justify-between gap-3">
-                    <span className="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1.5 text-xs font-medium text-blue-400">
+                    <span className="rounded-full border border-(--accent)/20 bg-(--accent)/10 px-3 py-1.5 text-xs font-medium text-(--accent)">
                       {project.category}
                     </span>
 
                     <Icon
                       size={21}
-                      className="shrink-0 text-blue-400"
+                      className="shrink-0 text-(--accent)"
                     />
                   </div>
 
-                  <h3 className="text-2xl font-bold text-[#F1F5F9] transition group-hover:text-blue-400">
+                  <h3 className="text-2xl font-bold text-(--foreground) transition group-hover:text-(--accent)">
                     {project.title}
                   </h3>
 
-                  <p className="mt-4 text-sm leading-7 text-[#A1AFC2]">
+                  <p className="mt-4 text-sm leading-7 text-(--muted)">
                     {project.description}
                   </p>
 
                   {/* Key Features */}
                   <div className="mt-6">
-                    <h4 className="mb-3 text-xs font-semibold uppercase tracking-widest text-[#64748B]">
+                    <h4 className="mb-3 text-xs font-semibold uppercase tracking-widest text-(--muted)">
                       Key Features
                     </h4>
 
                     <div className="grid gap-3 sm:grid-cols-2">
-                      {(project.highlights ?? []).map((highlight) => (
+                      {project.highlights.map((highlight) => (
                         <div
                           key={highlight}
-                          className="flex items-center gap-2 text-sm text-[#CBD5E1]"
+                          className="flex items-center gap-2 text-sm text-(--foreground)"
                         >
-                          <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-blue-400" />
+                          <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-(--accent)" />
                           {highlight}
                         </div>
                       ))}
@@ -172,8 +168,8 @@ export default function Projects() {
                   </div>
 
                   {/* Technologies */}
-                  <div className="mt-7 border-t border-white/10 pt-6">
-                    <h4 className="mb-3 text-xs font-semibold uppercase tracking-widest text-[#64748B]">
+                  <div className="mt-7 border-t border-(--border) pt-6">
+                    <h4 className="mb-3 text-xs font-semibold uppercase tracking-widest text-(--muted)">
                       Technologies Used
                     </h4>
 
@@ -181,7 +177,7 @@ export default function Projects() {
                       {project.technologies.map((technology) => (
                         <span
                           key={technology}
-                          className="rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-xs font-medium text-[#A1AFC2] transition hover:border-blue-400/30 hover:text-blue-400"
+                          className="rounded-lg border border-(--border) bg-(--surface-secondary) px-3 py-2 text-xs font-medium text-(--muted) transition hover:border-(--accent)/40 hover:text-(--accent)"
                         >
                           {technology}
                         </span>
@@ -191,37 +187,26 @@ export default function Projects() {
 
                   {/* Project Links */}
                   <div className="mt-7 flex flex-wrap gap-3">
-
-                    {project.liveUrl ? (
-                      <Link
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 rounded-full bg-blue-400 px-5 py-3 text-sm font-semibold text-[#080D18] transition duration-300 hover:-translate-y-0.5 hover:bg-blue-300"
-                      >
-                        Live Demo
-                        <ExternalLink size={16} />
-                      </Link>
-                    ) : (
-                      <span
-                        aria-disabled="true"
-                        className="inline-flex cursor-not-allowed items-center gap-2 rounded-full bg-white/10 px-5 py-3 text-sm font-semibold text-[#64748B]"
-                      >
-                        Live Demo Coming Soon
-                      </span>
-                    )}
+                    <Link
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-full bg-(--accent) px-5 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:opacity-85"
+                    >
+                      Live Demo
+                      <ExternalLink size={16} />
+                    </Link>
 
                     <Link
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-[#F1F5F9] transition duration-300 hover:border-blue-400 hover:text-blue-400"
+                      className="inline-flex items-center gap-2 rounded-full border border-(--border) px-5 py-3 text-sm font-semibold text-(--foreground) transition duration-300 hover:border-(--accent) hover:text-(--accent)"
                     >
                       <Code2 size={17} />
                       GitHub
                       <ArrowUpRight size={16} />
                     </Link>
-
                   </div>
                 </div>
               </article>
@@ -231,7 +216,7 @@ export default function Projects() {
 
         {/* GitHub Profile */}
         <div className="mt-12 text-center">
-          <p className="mb-5 text-sm text-[#A1AFC2]">
+          <p className="mb-5 text-sm text-(--muted)">
             Want to explore more of my development work?
           </p>
 
@@ -239,13 +224,12 @@ export default function Projects() {
             href="https://github.com/hafizul1997"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-blue-400/30 px-6 py-3 text-sm font-semibold text-blue-400 transition duration-300 hover:bg-blue-400 hover:text-[#080D18]"
+            className="inline-flex items-center gap-2 rounded-full border border-(--accent)/30 px-6 py-3 text-sm font-semibold text-(--accent) transition duration-300 hover:bg-(--accent) hover:text-white"
           >
             Explore My GitHub
             <ArrowUpRight size={17} />
           </Link>
         </div>
-
       </div>
     </section>
   );
