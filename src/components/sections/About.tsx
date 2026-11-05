@@ -52,8 +52,7 @@ export default function About() {
             <div className="absolute -inset-3 rounded-3xl bg-blue-400/10 blur-2xl" />
 
             <div className="relative overflow-hidden rounded-3xl border border-blue-400/20 bg-[#111827] p-3">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
-                <Image
+<div className="relative aspect-4/5 overflow-hidden rounded-2xl">                <Image
                   src="/images/hafizul-profile.png"
                   alt="Hafizul Islam - Full-Stack Web Developer"
                   fill
