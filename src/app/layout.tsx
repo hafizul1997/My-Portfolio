@@ -18,15 +18,23 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hafizul-portfolio.vercel.app"),
+
   title: {
     default: "Hafizul Islam | Full-Stack Web Developer",
     template: "%s | Hafizul Islam",
   },
+
+  description:
+    "Explore the portfolio of Hafizul Islam, a project-focused Full-Stack Web Developer based in Dubai, UAE. Discover projects built with Next.js, React, TypeScript, Node.js, Express.js and MongoDB.",
+
+  alternates: {
+    canonical: "/",
+  },
+
   verification: {
     google: "5x4UxTfjIy4OB5vHKQb33XVbz7bE1mSim6OCLHb34g4",
   },
-  description:
-    "Explore the portfolio of Hafizul Islam, a project-focused Full-Stack Web Developer based in Dubai, UAE. Discover projects built with Next.js, React, TypeScript, Node.js, Express.js and MongoDB.",
+
   keywords: [
     "Hafizul Islam",
     "Hafizul Islam Developer",
@@ -40,10 +48,12 @@ export const metadata: Metadata = {
     "Web Developer Dubai",
     "Portfolio",
   ],
+
   authors: [{ name: "Hafizul Islam" }],
   creator: "Hafizul Islam",
   applicationName: "Hafizul Islam Portfolio",
   category: "technology",
+
   openGraph: {
     title: "Hafizul Islam | Full-Stack Web Developer",
     description:
@@ -51,13 +61,16 @@ export const metadata: Metadata = {
     siteName: "Hafizul Islam Portfolio",
     locale: "en_US",
     type: "website",
+    url: "https://hafizul-portfolio.vercel.app",
   },
+
   twitter: {
     card: "summary_large_image",
     title: "Hafizul Islam | Full-Stack Web Developer",
     description:
       "Explore my projects, technical skills and web development journey.",
   },
+
   robots: {
     index: true,
     follow: true,
@@ -78,13 +91,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-  <body
-    className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}
-  >
-    <ThemeProvider>
-      {children}
-    </ThemeProvider>
-  </body>
-</html>
+      <body
+        className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}
+      >
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
+    </html>
   );
 }
