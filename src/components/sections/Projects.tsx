@@ -6,6 +6,7 @@ import {
   ArrowUpRight,
   Layers,
   ShoppingBag,
+  Scissors,
   Code2,
   ExternalLink,
 } from "lucide-react";
@@ -72,6 +73,46 @@ const projects = [
       "React",
       "TypeScript",
       "Tailwind CSS",
+    ],
+  },
+
+  {
+    number: "03",
+    title: "SalonBook",
+    category: "Full-Stack Salon Booking Platform",
+    description:
+      "A full-stack salon appointment booking platform where customers can explore beauty services, book appointments, and manage their bookings. Admins can manage services, appointments, and customers through a dedicated dashboard.",
+
+    image: "/images/salonbook.png",
+
+    liveUrl: "https://salonbook-client-5blk.vercel.app",
+
+    githubUrl:
+      "https://github.com/hafizul1997/salonbook-client",
+
+    serverUrl:
+      "https://github.com/hafizul1997/salonbook-server",
+
+    icon: Scissors,
+
+    highlights: [
+      "Customer and Admin authentication",
+      "Google OAuth login",
+      "Appointment booking and cancellation",
+      "Admin dashboard and service management",
+      "Duplicate time-slot prevention",
+      "Stripe Checkout integration",
+    ],
+
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Better Auth",
+      "Stripe",
     ],
   },
 ];
@@ -204,9 +245,22 @@ export default function Projects() {
                       className="inline-flex items-center gap-2 rounded-full border border-(--border) px-5 py-3 text-sm font-semibold text-(--foreground) transition duration-300 hover:border-(--accent) hover:text-(--accent)"
                     >
                       <Code2 size={17} />
-                      GitHub
+                      Client GitHub
                       <ArrowUpRight size={16} />
                     </Link>
+
+                    {"serverUrl" in project && project.serverUrl && (
+                      <Link
+                        href={project.serverUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-full border border-(--border) px-5 py-3 text-sm font-semibold text-(--foreground) transition duration-300 hover:border-(--accent) hover:text-(--accent)"
+                      >
+                        <Code2 size={17} />
+                        Server GitHub
+                        <ArrowUpRight size={16} />
+                      </Link>
+                    )}
                   </div>
                 </div>
               </article>
